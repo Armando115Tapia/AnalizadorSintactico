@@ -1,0 +1,22 @@
+INT : a =00;
+CHAR : b;
+STRING : s;
+
+
+INT : aaaa (INT : pp, CHAR : qq, STRING: ww,)
+INT : aa =00;
+CHAR : e;
+
+{
+ IF ( )THEN ELSE
+ IF ( ) THEN
+WHILE ( ) DO
+DO WHILE ( )
+ iooio + aapppk
+bjv- jnkbkjbj
+
+(3.1 + 6.3 ) + ( 2.3 +69.3)
+3+6
+(2.3 + 3.5 ) + 3.6
+
+ }
