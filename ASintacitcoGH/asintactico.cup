@@ -175,14 +175,26 @@ controlFlujo ::=  controlFlujo if_then
 				  |controlFlujo do_while
 				  |do_while
           ;
+/*
+if_then ::= IF PARENIZQ expresionesLogicas PARENDER THEN;
 
-if_then ::= IF PARENIZQ  PARENDER THEN;
+if_then_else ::= IF PARENIZQ expresionesLogicas PARENDER THEN ELSE  ; 
 
-if_then_else ::= IF PARENIZQ  PARENDER THEN ELSE  ; 
+while_do ::=  WHILE PARENIZQ expresionesLogicas PARENDER DO;
 
-while_do ::=  WHILE PARENIZQ  PARENDER DO;
+do_while ::= DO WHILE PARENIZQ expresionesLogicas  PARENDER;
+*/
 
-do_while ::= DO WHILE PARENIZQ PARENDER;
+if_then ::= IF PARENIZQ expresionesLogicas PARENDER THEN llaveIZQ expreAritmeticas llaveDER;
+
+if_then_else ::= IF PARENIZQ expresionesLogicas PARENDER THEN llaveIZQ expreAritmeticas llaveDER ELSE llaveIZQ expreAritmeticas  llaveDER  ; 
+
+while_do ::=  WHILE PARENIZQ expresionesLogicas PARENDER DO llaveIZQ expreAritmeticas  llaveDER;
+
+do_while ::= DO llaveIZQ expreAritmeticas llaveDER WHILE PARENIZQ expresionesLogicas  PARENDER;
+
+
+
 
 //if (expresión) then comando
 //if (expresión) then comando else comando
@@ -200,21 +212,11 @@ expresionesLogicas ::= IDENTIFICADOR oprdrsComparacion IDENTIFICADOR
 					   |expreAritmeticas oprdrsComparacion  expreAritmeticas 
 					   ;
 
-
-
-
-
-
-
-
 /*-----------------------------------------------------------------------------------------------------------*/	
 //Expresiones Aritmeticas
 
 expreAritmeticas ::= expresionSuma //expresionMult
-                   
-                      
-
-;
+                       ;
 //Se separa la suma de la resta, debido a que en CUP, podemos asignar presedencia a los signos de puntuacion
 
 

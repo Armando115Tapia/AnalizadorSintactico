@@ -1,21 +1,39 @@
-INT : a =00;
-CHAR : b;
-STRING : s;
+INT : Vglobal1 =00;
+CHAR : Vglobal2;
+STRING : VGlobal3;
+INT : Vglobal4[10] = 00;
 
 
-INT : aaaa (INT : pp, CHAR : qq, STRING: ww,)
-INT : aa =00;
-CHAR : e;
+INT : funcionA (INT : parametro1, CHAR : parametro2, STRING: parametro3,)
+INT : Vlocal1 =00;
+CHAR : Vlocal2;
 
 {
- IF ( )THEN ELSE
- IF ( ) THEN
-WHILE (  ) DO
-DO WHILE (  )
+ 
+IF (3==7) THEN { a+b } ELSE { b-c}
 
-53 +98
-32.3 + 9.36 
-(20.3 + 36.1) + (21.0 - 96.1)
+
+IF (6 >= 9 ) THEN {
+
+                  (3+6) + (12 +6)
+               
+                  }
+
+
+WHILE ( assd != poso ) DO {
+                           (7.14 + 6.14) - (3.14 + 2.71) 
+                         }
+
+
+DO { 
+  po + rras 
+   } WHILE (9.5 == 1.0 )
+
+
+
+53 - 98
+32.3 - 9.36 
+(20.3 - 36.1) - (21.0 - 96.1)
 
 A >= B
 C == K
