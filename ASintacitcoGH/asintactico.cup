@@ -70,7 +70,7 @@ parser code {:
    Terminales que no tienen un valor son listados primero, los terminales que
    tienen un valor como los enteros son listados en la segunda o demas lineas. */
 terminal           SEMI, OP_SUMA, OP_RESTA, OP_MULT, PARENIZQ, PARENDER ,INT, FLOAT, INICIO, FIN , CHAR ,BOOL ,STRING, DOSPUNTOS,IGUAL, INCREMENTO, COMMAA;
-terminal           CERO, corchDER, corchIZQ, llaveDER, llaveIZQ, IF, THEN, ELSE, DO, WHILE,MAY_IGUAL , MENOR_IGUAL, IGUAL_IGUAL, DIFERENT, AND_AND, OR;
+terminal           CERO, corchDER, corchIZQ, llaveDER, llaveIZQ, IF, THEN, ELSE, DO, WHILE, MAY_IGUAL , MENOR_IGUAL, IGUAL_IGUAL, DIFERENT, AND_AND, OR;
 terminal Integer   Entero, INTEGERP ,INTEGERR;
 terminal Float      NUMFLOAT;
 terminal Object IDENTIFICADOR;
@@ -80,7 +80,7 @@ non terminal  Object  programa, sent, sentencia,variablesGlobales, CuerpoProgram
 non terminal Object declaracionVariablesGlobales, conjuntoFunciones, variableGlobal1,variableGlobal2 , tipovariableNUM, vGlobalVector, tipovariableCAD;
 non terminal Object vGlobalVectorCAD, funcion1, encabezado, lstDeclaLocales, lstParametros, cuerpo, Parametros, bloqueComandos,controlFlujo ,while_do, do_while;
 non terminal Object if_then, if_then_else, expreAritmeticas,OperadorSR,expresionSuma, OPcompuesto,crpOperadoComp,OperadorMD, expresionMult, OPcompuestoMD;
-non terminal Object crpOperadoCompMD;
+non terminal Object crpOperadoCompMD,expresionesLogicas, oprdrsComparacion;
 //non terminal Object     IDENTIFICADOR;
 
    //GRAMATICA
@@ -160,7 +160,8 @@ cuerpo ::=  llaveIZQ bloqueComandos llaveDER
 bloqueComandos ::=  bloqueComandos expreAritmeticas
 				   |expreAritmeticas
                    |controlFlujo 
-
+				   |bloqueComandos expresionesLogicas
+                   |expresionesLogicas
 
 				   
 ;
@@ -175,11 +176,11 @@ controlFlujo ::=  controlFlujo if_then
 				  |do_while
           ;
 
-if_then ::= IF PARENIZQ PARENDER THEN;
+if_then ::= IF PARENIZQ  PARENDER THEN;
 
-if_then_else ::= IF PARENIZQ PARENDER THEN ELSE  ; 
+if_then_else ::= IF PARENIZQ  PARENDER THEN ELSE  ; 
 
-while_do ::=  WHILE PARENIZQ PARENDER DO;
+while_do ::=  WHILE PARENIZQ  PARENDER DO;
 
 do_while ::= DO WHILE PARENIZQ PARENDER;
 
@@ -188,15 +189,34 @@ do_while ::= DO WHILE PARENIZQ PARENDER;
 //while (expresión) do comando
 //do comando while (expresión)
 
+/*------------------------------------------------------------------------------------------------------------*/
+//Expresiones logicas, son las que dan como resultado true o false 9>=3 o expresionAritm > expresionAritmetica
+//se puede crear expresiones logicas con operadores relacionales de forma recursiva
+
+
+expresionesLogicas ::= IDENTIFICADOR oprdrsComparacion IDENTIFICADOR 
+                       |NUMFLOAT oprdrsComparacion NUMFLOAT
+				       |INTEGERP oprdrsComparacion INTEGERP
+					   |expreAritmeticas oprdrsComparacion  expreAritmeticas 
+					   ;
+
+
+
+
+
+
+
+
 /*-----------------------------------------------------------------------------------------------------------*/	
 //Expresiones Aritmeticas
 
-expreAritmeticas ::= expresionSuma
-                    
+expreAritmeticas ::= expresionSuma //expresionMult
+                   
                       
 
 ;
 //Se separa la suma de la resta, debido a que en CUP, podemos asignar presedencia a los signos de puntuacion
+
 
 expresionSuma ::=  IDENTIFICADOR OperadorSR IDENTIFICADOR
                     |NUMFLOAT OperadorSR NUMFLOAT
@@ -226,6 +246,7 @@ expresionMult ::=  IDENTIFICADOR OperadorMD IDENTIFICADOR
 					|OPcompuestoMD OperadorMD INTEGERP
 					|NUMFLOAT OperadorMD OPcompuestoMD
 					|OPcompuestoMD OperadorMD NUMFLOAT
+					
 
 
 ;
@@ -241,9 +262,6 @@ crpOperadoCompMD ::= |NUMFLOAT OperadorMD NUMFLOAT
 
 
 /*-----------------------------------------------------------------------------------------------------------*/	
-//Expresiones logicas, son las que dan como resultado true o false 9>=3 o expresionAritm > expresionAritmetica
-//se puede crear expresiones logicas con operadores relacionales de forma recursiva
-
 
 
 
@@ -278,6 +296,12 @@ OperadorSR ::=  OP_SUMA
 OperadorMD ::=  OP_MULT
                
 ;
+
+oprdrsComparacion ::=  MAY_IGUAL 
+                      |MENOR_IGUAL 
+					  |IGUAL_IGUAL 
+					  |DIFERENT
+					  ;
 
 		
 

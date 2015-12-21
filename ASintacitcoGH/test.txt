@@ -10,13 +10,20 @@ CHAR : e;
 {
  IF ( )THEN ELSE
  IF ( ) THEN
-WHILE ( ) DO
-DO WHILE ( )
- iooio + aapppk
-bjv- jnkbkjbj
+WHILE (  ) DO
+DO WHILE (  )
 
-(3.1 + 6.3 ) + ( 2.3 +69.3)
-3+6
-(2.3 + 3.5 ) + 3.6
+53 +98
+32.3 + 9.36 
+(20.3 + 36.1) + (21.0 - 96.1)
+
+A >= B
+C == K
+
+5.0 != 6.3
+9 == 6 
+
+20.3 + 36.5 == 13.2 + 96.3
+
 
  }
