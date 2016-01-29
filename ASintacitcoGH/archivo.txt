@@ -1,0 +1,30 @@
+#include <stdio>
+{
+int : saldo;
+int : k;
+int : mat[2];  
+char: j; 
+bool: true; 
+int: res;
+ main(){	
+	bool: b;
+	float:x;
+	bool: r;
+	r = true;
+	res = r+1;
+	}	
+int: Suma (int:x, int:y)
+	{
+	k=9;
+	float: resultado;
+	resultado = 4.6+k;
+	}
+bool:Suma2  (int:x, int:y)
+	{
+	int: c;
+	c=x+y;
+	bool: false;
+	p=false+4;
+	}
+}
+	
