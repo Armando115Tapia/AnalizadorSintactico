@@ -3,7 +3,7 @@ int:p;
 int:c;
 float:lw;
 bool:ls;
-
+int:ls;
 char: factorial(float:arl);
 int : vect[5];
 int : funcion(int:peerto);
@@ -25,13 +25,6 @@ char: factorial(){
 
 return aple;}
 
-
-
-	 
-	
-	}
-	
-		
 
 
 	 

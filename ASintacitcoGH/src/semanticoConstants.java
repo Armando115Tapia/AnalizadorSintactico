@@ -9,43 +9,43 @@ public interface semanticoConstants {
   /** End of File. */
   int EOF = 0;
   /** RegularExpression Id. */
-  int PUBLIC = 1;
+  int IGUAL = 1;
   /** RegularExpression Id. */
-  int PRIVATE = 2;
+  int MAS = 2;
   /** RegularExpression Id. */
-  int STATIC = 3;
+  int MENOS = 3;
   /** RegularExpression Id. */
-  int VOID = 4;
+  int POR = 4;
   /** RegularExpression Id. */
-  int MAIN = 5;
+  int DIVIDE = 5;
   /** RegularExpression Id. */
-  int PROGRAMA = 6;
+  int PUBLIC = 6;
   /** RegularExpression Id. */
-  int IF = 7;
+  int PRIVATE = 7;
   /** RegularExpression Id. */
-  int THEN = 8;
+  int STATIC = 8;
   /** RegularExpression Id. */
-  int ELSE = 9;
+  int VOID = 9;
   /** RegularExpression Id. */
-  int DO = 10;
+  int MAIN = 10;
   /** RegularExpression Id. */
-  int WHILE = 11;
+  int PROGRAMA = 11;
   /** RegularExpression Id. */
-  int OUT = 12;
+  int IF = 12;
   /** RegularExpression Id. */
-  int INPUT = 13;
+  int THEN = 13;
   /** RegularExpression Id. */
-  int RETURN = 14;
+  int ELSE = 14;
   /** RegularExpression Id. */
-  int IGUAL = 15;
+  int DO = 15;
   /** RegularExpression Id. */
-  int MAS = 16;
+  int WHILE = 16;
   /** RegularExpression Id. */
-  int MENOS = 17;
+  int WRITE = 17;
   /** RegularExpression Id. */
-  int POR = 18;
+  int READ = 18;
   /** RegularExpression Id. */
-  int DIVIDE = 19;
+  int RETURN = 19;
   /** RegularExpression Id. */
   int PARIZQ = 20;
   /** RegularExpression Id. */
@@ -71,51 +71,45 @@ public interface semanticoConstants {
   /** RegularExpression Id. */
   int DINERO = 31;
   /** RegularExpression Id. */
-  int NUMERAL = 32;
+  int IGUALIGUAL = 32;
   /** RegularExpression Id. */
-  int IGUALIGUAL = 33;
+  int MENORIGUAL = 33;
   /** RegularExpression Id. */
-  int MENORIGUAL = 34;
+  int MENOR = 34;
   /** RegularExpression Id. */
-  int MENOR = 35;
+  int MAYORIGUAL = 35;
   /** RegularExpression Id. */
-  int MAYORIGUAL = 36;
+  int MAYOR = 36;
   /** RegularExpression Id. */
-  int MAYOR = 37;
+  int DIFERENTE = 37;
   /** RegularExpression Id. */
-  int DIFERENTE = 38;
+  int OR = 38;
   /** RegularExpression Id. */
-  int OR = 39;
+  int AND = 39;
   /** RegularExpression Id. */
-  int AND = 40;
+  int INT = 40;
   /** RegularExpression Id. */
-  int INT = 41;
+  int FLOAT = 41;
   /** RegularExpression Id. */
-  int INCLUDE = 42;
+  int CHAR = 42;
   /** RegularExpression Id. */
-  int FLOAT = 43;
+  int STRING = 43;
   /** RegularExpression Id. */
-  int CHAR = 44;
+  int BOOL = 44;
   /** RegularExpression Id. */
-  int STRING = 45;
+  int NUMERO = 45;
   /** RegularExpression Id. */
-  int BOOL = 46;
+  int BOOLEANO = 46;
   /** RegularExpression Id. */
-  int NUMERO = 47;
+  int IDENTIFICADOR = 47;
   /** RegularExpression Id. */
-  int IDENTIFICADOR = 48;
+  int DECIMAL = 48;
   /** RegularExpression Id. */
-  int DECIMAL = 49;
+  int CADENA = 49;
   /** RegularExpression Id. */
-  int CADENA = 50;
+  int CARACTER = 50;
   /** RegularExpression Id. */
-  int CARACTER = 51;
-  /** RegularExpression Id. */
-  int DOSPUNTOS = 52;
-  /** RegularExpression Id. */
-  int BOOLEANO = 53;
-  /** RegularExpression Id. */
-  int DOUBLE = 54;
+  int DOSPUNTOS = 51;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -123,11 +117,16 @@ public interface semanticoConstants {
   /** Literal token values. */
   String[] tokenImage = {
     "<EOF>",
+    "\"=\"",
+    "\"+\"",
+    "\"-\"",
+    "\"*\"",
+    "\"/\"",
     "\"public\"",
     "\"private\"",
     "\"static\"",
     "\"void\"",
-    "\"main()\"",
+    "\"void Main()\"",
     "\"Programa\"",
     "\"if\"",
     "\"then\"",
@@ -137,11 +136,6 @@ public interface semanticoConstants {
     "\"output\"",
     "\"input\"",
     "\"return\"",
-    "\"=\"",
-    "\"+\"",
-    "\"-\"",
-    "\"*\"",
-    "\"/\"",
     "\"(\"",
     "\")\"",
     "\"{\"",
@@ -154,7 +148,6 @@ public interface semanticoConstants {
     "\"!\"",
     "\"&\"",
     "\"$\"",
-    "\"#\"",
     "\"==\"",
     "\"<=\"",
     "\"<\"",
@@ -164,26 +157,24 @@ public interface semanticoConstants {
     "\"||\"",
     "\"&&\"",
     "\"int\"",
-    "\"include\"",
     "\"float\"",
     "\"char\"",
     "\"string\"",
     "\"bool\"",
     "<NUMERO>",
+    "<BOOLEANO>",
     "<IDENTIFICADOR>",
     "<DECIMAL>",
     "<CADENA>",
     "<CARACTER>",
     "\":\"",
-    "<BOOLEANO>",
-    "\"double\"",
     "\" \"",
     "\"\\n\"",
     "\"\\r\"",
     "\"\\r\\n\"",
     "\"\\t\"",
-    "<token of kind 60>",
-    "<token of kind 61>",
+    "<token of kind 57>",
+    "<token of kind 58>",
   };
 
 }
